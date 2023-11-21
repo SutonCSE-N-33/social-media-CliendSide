@@ -48,7 +48,7 @@ const EditReply = ({modalIsOpen,closeModal, reply, getReply}) => {
                         closeModal();
                         getReply()
                         navigate('/')
-                        toast.success("Successfully Add a Post!");
+                        toast.success("Successfully Edited!");
                       })
                       .catch(error => {
                         console.error("An error occurred:", error);

@@ -1,6 +1,3 @@
-/* eslint-disable no-undef */
-/* eslint-disable no-unused-vars */
-// eslint-disable-next-line no-unused-vars
 import React, { useState } from "react";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -29,37 +26,38 @@ const Login = () => {
       username: data.username,
       password: data.password,
     };
-    console.log(users)
+    // console.log(users)
     if (users.username !== "" && users.password !== "") {
-      fetch("https://social-platform-y209.onrender.com/login/", {
-        method: "POST", // or 'PUT'
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(users),
-      })
-        .then((response) => response.json())
-        .then((res) => {
-          const token = res.token;
-          const user_id = res.user_id;
-          const first_name = res.first_name;
-          const last_name = res.last_name;
+      axios
+        .post(
+          `https://social-platform-y209.onrender.com/login/?format=json`,
+          users,
+          {}
+        )
+        .then(res => {
+          console.log(res.data);
+          const token = res.data.token;
+          const user_id = res.data.user_id;
+          const first_name = res.data.first_name;
+          const last_name = res.data.last_name;
           localStorage.setItem("user_id", user_id);
           localStorage.setItem("token", token);
-          localStorage.setItem("name", first_name+" "+ last_name);
+          localStorage.setItem("name", first_name +" "+ last_name);
+          
+
           navigate(from, { replace: true });
           // navigate('/dashboard')
           toast.success("Successfully login!");
-      
         })
-        .catch((error) => {
-          console.error("Error:", error)
+        .catch(error => {
+          console.log(error);
+          handleFailed();
         });
     }
   };
 
   return (
-    <div className="mt-28">
+    <div>
       {is_failed && (
         <p className="text-red-400 text-center font-semibold text-1xl">
           The Username Or Password doesn`t matched{" "}

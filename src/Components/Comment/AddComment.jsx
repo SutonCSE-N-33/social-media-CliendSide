@@ -49,11 +49,11 @@ const AddComment = ({modalIsOpen,closeModal, postId, getComments}) => {
                         closeModal();
                         getComments();
                         navigate('/')
-                        toast.success("Successfully Add a Post!");
+                        toast.success("Successfully Add a comment!");
                       })
                       .catch(error => {
                         console.error("An error occurred:", error);
-                        toast.error("Failed to Add a Property!");
+                        toast.error("Failed to Add a comment!");
                       });
       };
 

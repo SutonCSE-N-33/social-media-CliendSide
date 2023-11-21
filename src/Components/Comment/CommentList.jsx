@@ -32,7 +32,7 @@ const CommentList = ({comment,getComments,post}) => {
         axios
         .delete(`https://social-platform-y209.onrender.com/comment/${comment.id}/`)
         .then(res => {
-          toast.success("Successfully Dislike");
+          toast.success("Successfully Deleted Comment");
           getComments()
         });
     }

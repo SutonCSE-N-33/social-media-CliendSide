@@ -1,5 +1,6 @@
 import Login from './Components/Account/Login';
 import Register from './Components/Account/Register';
+import { Toaster } from "react-hot-toast";
 import Home from './Components/Home/Home';
 import Navbar from './Components/Home/Navbar/Navbar'
 import { Route, Routes } from "react-router-dom";
@@ -19,6 +20,7 @@ function App() {
       <Route path='/login' element={<Login></Login>}> </Route>
       <Route path='/register' element={<Register></Register>}> </Route>
     </Routes>
+    <Toaster />
     </div>
   )
 }

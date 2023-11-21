@@ -51,7 +51,7 @@ const EditPost = ({modalIsOpen,closeModal, post, getPost}) => {
                       })
                       .catch(error => {
                         console.error("An error occurred:", error);
-                        toast.error("Failed to Add a Property!");
+                        toast.error("Failed to Edit a Post!");
                       });
       };
 

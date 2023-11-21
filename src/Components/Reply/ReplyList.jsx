@@ -13,11 +13,11 @@ const ReplyList = ({reply,getReply}) => {
         setIsOpen(true);
       }
     
-    const delateComment = () =>{
+    const delateReply = () =>{
         axios
         .delete(`https://social-platform-y209.onrender.com/reply/${reply.id}/`)
         .then(res => {
-          toast.success("Successfully Dislike");
+          toast.success("Successfully Deleted");
           getReply()
         });
     }
@@ -31,7 +31,7 @@ const ReplyList = ({reply,getReply}) => {
 
         <div className='flex mt-3'>
            <button onClick={openMadal} className='px-4 text-white bg-blue-500'>Edit</button>
-           <button onClick={delateComment} className='ml-3 text-white bg-red-500 px-4'>Delete</button>
+           <button onClick={delateReply} className='ml-3 text-white bg-red-500 px-4'>Delete</button>
         </div>
      </div>
    <EditReply modalIsOpen={modalIsOpen} reply={reply} closeModal={closeModal} getReply={getReply} />

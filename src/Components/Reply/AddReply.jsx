@@ -50,11 +50,11 @@ const AddReply = ({replyModalIsOpen,closeReplyModal, postId, commentId,getReply}
                         closeReplyModal();
                         getReply()
                         navigate('/')
-                        toast.success("Successfully Add a Post!");
+                        toast.success("Successfully Add a Reply!");
                       })
                       .catch(error => {
                         console.error("An error occurred:", error);
-                        toast.error("Failed to Add a Property!");
+                        toast.error("Failed to Add a Reply!");
                       });
       };
 

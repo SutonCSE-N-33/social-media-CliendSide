@@ -41,7 +41,7 @@ const ProfileSimplePost = ({post,openCommentMadal,handleReact,getPost,comments,r
         axios
         .delete(`https://social-platform-y209.onrender.com/post/${post.id}/`)
         .then(res => {
-          toast.success("Successfully Dislike");
+          toast.success("Successfully Deleted This Post");
           getPost()
         });
     }

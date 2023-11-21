@@ -47,11 +47,11 @@ const EditComment = ({modalIsOpen,closeModal, comment, getComments}) => {
                         closeModal();
                         getComments()
                         navigate('/')
-                        toast.success("Successfully Add a Post!");
+                        toast.success("Successfully Edited this Comment!");
                       })
                       .catch(error => {
                         console.error("An error occurred:", error);
-                        toast.error("Failed to Add a Property!");
+                        toast.error("Failed to Edit a Comment!");
                       });
       };
 
