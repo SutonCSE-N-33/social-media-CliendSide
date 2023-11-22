@@ -2,26 +2,16 @@ import React, { useEffect, useState } from 'react';
 import AddComment from '../../Comment/AddComment';
 import SimplePost from './SimplePost';
 import axios from "axios";
+import usePosts from '../../../Hooks/usePosts';
 
 const PostFeature = () => {
-    const [posts, setPosts] = useState([])
     const [modalIsOpen, setIsOpen] = useState(false);
+    const { posts, getPosts} = usePosts();
     const [postId,setPostId] = useState()
     const [comments, setComments] = useState([])
     const [reacts, setReacts] = useState([])
     const reveresedArray =[...posts].reverse()
     
-
-    const getPosts = () =>{
-      fetch(
-        "https://social-platform-y209.onrender.com/post/?format=json"
-      )
-      .then(res => res?.json())
-      .then(data => setPosts(data))
-      .catch(error => {
-        console.error("Error:", error);
-      });
-    }
 
     const getComments = () => {
       fetch(

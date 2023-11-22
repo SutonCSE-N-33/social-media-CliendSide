@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
-
+import usePosts from '../../../Hooks/usePosts';
 const customStyles = {
     content: {
       top: '50%',
@@ -17,7 +17,7 @@ const customStyles = {
   };
   Modal.setAppElement('#root');
 const AddPost = ({modalIsOpen,closeModal}) => {
-
+  const {getPosts} = usePosts();
     const {
         register,
         handleSubmit,
@@ -56,6 +56,7 @@ const AddPost = ({modalIsOpen,closeModal}) => {
                       )
                       .then(response => {
                         reset();
+                        getPosts();
                         closeModal();
                         navigate('/')
                         toast.success("Successfully Add a Post!");
@@ -69,6 +70,10 @@ const AddPost = ({modalIsOpen,closeModal}) => {
             console.error("Error:", error);
           });
       };
+
+
+      
+
 
     return (
         <div>
