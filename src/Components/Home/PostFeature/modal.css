@@ -1,0 +1,84 @@
+.content-modal{
+    top: 50%;
+    left: 50%;
+    right: auto;
+    bottom: auto;
+    margin-right: -50%;
+    transform: translate(180%, 50%);
+    width: 300px;
+}
+
+.post-modal{
+    top: 50%;
+    left: 50%;
+    right: auto;
+    bottom: auto;
+    margin-right: -50%;
+    transform: translate(180%, 35%);
+    width: 300px;
+}
+
+.edit-post-modal{
+    top: 50%;
+    left: 50%;
+    right: auto;
+    bottom: auto;
+    margin-right: -50%;
+    transform: translate(180%, 30%);
+    width: 300px;
+}
+
+.profile-modal{
+    top: 50%;
+    left: 50%;
+    right: auto;
+    bottom: auto;
+    margin-right: -50%;
+    transform: translate(80%, 20%);
+    width: 500px;
+}
+
+.active{
+    color: blue;
+}
+
+@media all and (max-width:500px){
+    .content-modal{
+        top: 50%;
+        left: 50%;
+        right: auto;
+        bottom: auto;
+        margin-right: -50%;
+        transform: translate(10%, 75%);
+        width: 300px;
+    }
+
+    .post-modal{
+        top: 50%;
+        left: 50%;
+        right: auto;
+        bottom: auto;
+        margin-right: -50%;
+        transform: translate(10%, 50%);
+        width: 300px;
+    }
+    .edit-post-modal{
+        top: 50%;
+        left: 50%;
+        right: auto;
+        bottom: auto;
+        margin-right: -50%;
+        transform: translate(10%, 50%);
+        width: 300px;
+    }
+    .profile-modal{
+        top: 50%;
+        left: 50%;
+        right: auto;
+        bottom: auto;
+        margin-right: -50%;
+        transform: translate(0%, 25%);
+        width: 400px;
+    }
+}
+

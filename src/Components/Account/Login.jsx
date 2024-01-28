@@ -40,6 +40,8 @@ const Login = () => {
           const user_id = res.data.user_id;
           const first_name = res.data.first_name;
           const last_name = res.data.last_name;
+          const profile_id = res.data.profile_id;
+          localStorage.setItem("profile_id", profile_id);
           localStorage.setItem("user_id", user_id);
           localStorage.setItem("token", token);
           localStorage.setItem("name", first_name +" "+ last_name);

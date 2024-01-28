@@ -164,7 +164,7 @@ const Register = () => {
                   onBlur={validData}
                   id="create-account-pseudo"
                   className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-500 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
-                  placeholder="Password"
+                  placeholder="Password mast be 6 characters with 2 digits"
                 />
                 {unValid && (
                   <p className="text-red-500">
